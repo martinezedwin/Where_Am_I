@@ -1,4 +1,4 @@
-prefix=/home/edwin/Documents/Projects/GO_Chase_It!/install
+prefix=/home/edwin/Documents/Projects/Go_Chase_It/install
 
 Name: my_robot
 Description: Description of my_robot

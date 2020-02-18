@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/edwin/Documents/Projects/GO_Chase_It!/src
+CMAKE_SOURCE_DIR = /home/edwin/Documents/Projects/Go_Chase_It/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/edwin/Documents/Projects/GO_Chase_It!/build
+CMAKE_BINARY_DIR = /home/edwin/Documents/Projects/Go_Chase_It/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ my_robot/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_expor
 .PHONY : my_robot/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 my_robot/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/edwin/Documents/Projects/GO_Chase_It!/build/my_robot && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/edwin/Documents/Projects/Go_Chase_It/build/my_robot && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : my_robot/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 my_robot/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/edwin/Documents/Projects/GO_Chase_It!/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Documents/Projects/GO_Chase_It!/src /home/edwin/Documents/Projects/GO_Chase_It!/src/my_robot /home/edwin/Documents/Projects/GO_Chase_It!/build /home/edwin/Documents/Projects/GO_Chase_It!/build/my_robot /home/edwin/Documents/Projects/GO_Chase_It!/build/my_robot/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/edwin/Documents/Projects/Go_Chase_It/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Documents/Projects/Go_Chase_It/src /home/edwin/Documents/Projects/Go_Chase_It/src/my_robot /home/edwin/Documents/Projects/Go_Chase_It/build /home/edwin/Documents/Projects/Go_Chase_It/build/my_robot /home/edwin/Documents/Projects/Go_Chase_It/build/my_robot/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : my_robot/CMakeFiles/_catkin_empty_exported_target.dir/depend
 
