@@ -3,6 +3,6 @@ prefix=/home/edwin/Documents/Projects/Go_Chase_It/devel
 Name: ball_chaser
 Description: Description of ball_chaser
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/edwin/Documents/Projects/Go_Chase_It/devel/include
 Libs: -L${prefix}/lib 
 Requires: 
