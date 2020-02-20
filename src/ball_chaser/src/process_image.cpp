@@ -15,7 +15,7 @@ void drive_robot(float lin_x, float ang_z)
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
 
-    ROS_INFO_STREAM("moving the robot");
+    //ROS_INFO_STREAM("moving the robot");
 
 
 }
@@ -30,21 +30,30 @@ void process_image_callback(const sensor_msgs::Image img)
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
+    int first_third_bound = img.data.size()/3;
+    int second_third_bound = img.data.size()* 2 / 3;
+    int end_of_image = img.data.size();
+
+    //ROS_INFO_STREAM("TOTAL = " << img.data.size());
+    //ROS_INFO_STREAM("First third bound = " << first_third_bound);
+    //ROS_INFO_STREAM("Second third bound = " << second_third_bound);
+    //ROS_INFO_STREAM("END third bound = " << end_of_image);
 
     for (int i = 0; i < img.height * img.step; i++) {
         int step_position = i % img.step;
+        ROS_INFO_STREAM("position of white pixel = " << img.height);
         if (img.data[i] == white_pixel) {
-            ROS_INFO_STREAM("FOUND A WHITE PIXEL!!!!!!!!!!!!!!!!!!!");
+            //ROS_INFO_STREAM(img.data[i]);
             if (step_position <= img.data.size()/3){
-                ROS_INFO_STREAM("LEFT!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("LEFT!!!!!!!!!!!!!!!!!!!");
                 drive_robot(0.5, 0.5);
             }
             else if (step_position > img.data.size()* 2 / 3 && step_position <= img.data.size()* 2 / 3){
-                ROS_INFO_STREAM("MIDDLE!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("MIDDLE!!!!!!!!!!!!!!!!!!!");
                 drive_robot(0.5, 0.0);
             }
             else if (step_position > img.data.size()* 2 / 3){
-                ROS_INFO_STREAM("RIGHT!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("RIGHT!!!!!!!!!!!!!!!!!!!");
                 drive_robot(0.5, -0.5);
             }
         }
