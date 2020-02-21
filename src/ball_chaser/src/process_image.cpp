@@ -15,9 +15,10 @@ void drive_robot(float lin_x, float ang_z)
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
 
-    //ROS_INFO_STREAM("moving the robot");
-
-
+    ROS_INFO_STREAM("moving the robot");
+    if (!client.call(srv)){
+        ROS_INFO_STREAM("Failed to execute drive command");
+    }
 }
 
 // This callback function continuously executes and reads the image data
@@ -30,37 +31,65 @@ void process_image_callback(const sensor_msgs::Image img)
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
-    int first_third_bound = img.data.size()/3;
-    int second_third_bound = img.data.size()* 2 / 3;
-    int end_of_image = img.data.size();
 
-    //ROS_INFO_STREAM("TOTAL = " << img.data.size());
-    //ROS_INFO_STREAM("First third bound = " << first_third_bound);
-    //ROS_INFO_STREAM("Second third bound = " << second_third_bound);
-    //ROS_INFO_STREAM("END third bound = " << end_of_image);
+    //-----------------------------------------------------------------Image Info-------------------------------------------------------
+    int image_step = img.step;
+    int image_width = img.width;
+    int image_height = img.height;
+    std::string encoding = img.encoding;
+    int image_size = img.data.size();
 
-    for (int i = 0; i < img.height * img.step; i++) {
-        int step_position = i % img.step;
-        ROS_INFO_STREAM("position of white pixel = " << img.height);
+    //ROS_INFO_STREAM("Step = " << image_step);    //output is 2400
+    //ROS_INFO_STREAM("Width = " << image_width);  //800
+    //ROS_INFO_STREAM("Height = " << image_height);//800
+    //ROS_INFO_STREAM("Encoding = " << encoding);  //rgb8
+    //ROS_INFO_STREAM("size = " << image_size);  //1920000
+    //-----------------------------------------------------------------^Image Info^-------------------------------------------------------
+
+    //Define the thirds
+    int first_third_bound = image_step / 3;
+    int second_third_bound = image_step * 2 / 3;
+    int end_of_image = image_step;
+
+    float x = 0;
+    float z = 0.5;
+
+    int where_am_i = 0;
+
+    bool found_one = false;
+
+    for (int i = 0; i < image_size; i++) {                                      //loop through every pixel in an image
+        if (where_am_i > image_step){
+            where_am_i = 0;
+        }
         if (img.data[i] == white_pixel) {
             //ROS_INFO_STREAM(img.data[i]);
-            if (step_position <= img.data.size()/3){
-                //ROS_INFO_STREAM("LEFT!!!!!!!!!!!!!!!!!!!");
-                drive_robot(0.5, 0.5);
+            if (where_am_i <= first_third_bound){
+                //ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
+                x = 0.5;
+                z = 0.5;
             }
-            else if (step_position > img.data.size()* 2 / 3 && step_position <= img.data.size()* 2 / 3){
-                //ROS_INFO_STREAM("MIDDLE!!!!!!!!!!!!!!!!!!!");
-                drive_robot(0.5, 0.0);
+            else if (where_am_i > first_third_bound && where_am_i <= second_third_bound){
+                //ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
+                x = 0.5;
+                z = 0.0;
             }
-            else if (step_position > img.data.size()* 2 / 3){
-                //ROS_INFO_STREAM("RIGHT!!!!!!!!!!!!!!!!!!!");
-                drive_robot(0.5, -0.5);
+            else if (where_am_i > second_third_bound){
+                //ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
+                x = 0.5;
+                z = -0.5;
             }
         }
-        else{
-            drive_robot(0.0, 0.0);           
-        }
+        //ROS_INFO_STREAM("i = " << i);
+        //ROS_INFO_STREAM("position = " <<where_am_i );
+        where_am_i += 1;
+
     }
+    //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
+
+
+    drive_robot(x,z);
+
 }
 
 int main(int argc, char** argv)
