@@ -16,9 +16,9 @@ void drive_robot(float lin_x, float ang_z)
     srv.request.angular_z = ang_z;
 
     ROS_INFO_STREAM("moving the robot");
-    if (!client.call(srv)){
-        ROS_INFO_STREAM("Failed to execute drive command");
-    }
+    //if (!client.call(srv)){
+    //    ROS_INFO_STREAM("Failed to execute drive command");
+    //}
 }
 
 // This callback function continuously executes and reads the image data
@@ -52,7 +52,7 @@ void process_image_callback(const sensor_msgs::Image img)
     int end_of_image = image_step;
 
     float x = 0;
-    float z = 0.5;
+    float z = 0.0;
 
     int where_am_i = 0;
 
@@ -64,18 +64,19 @@ void process_image_callback(const sensor_msgs::Image img)
         }
         if (img.data[i] == white_pixel) {
             //ROS_INFO_STREAM(img.data[i]);
+            found_one = true;
             if (where_am_i <= first_third_bound){
-                //ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
+                ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = 0.5;
             }
             else if (where_am_i > first_third_bound && where_am_i <= second_third_bound){
-                //ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
+                ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = 0.0;
             }
             else if (where_am_i > second_third_bound){
-                //ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
+                ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = -0.5;
             }
@@ -86,9 +87,14 @@ void process_image_callback(const sensor_msgs::Image img)
 
     }
     //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
+    ROS_INFO_STREAM("found_one = " << found_one);
 
+    if (found_one = true){
+        ROS_INFO_STREAM("found_one in the loop = " << found_one);
+        drive_robot(x,z);
+    }
 
-    drive_robot(x,z);
+    
 
 }
 
