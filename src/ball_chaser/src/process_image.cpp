@@ -51,6 +51,10 @@ void process_image_callback(const sensor_msgs::Image img)
     int second_third_bound = image_step * 2 / 3;
     int end_of_image = image_step;
 
+    //ROS_INFO_STREAM("First Bound = " << first_third_bound);    //800
+    //ROS_INFO_STREAM("Second Bound = " << second_third_bound);  //1600
+    //ROS_INFO_STREAM("Third Bound = " << end_of_image);         //2400
+
     float x = 0;
     float z = 0.0;
 
@@ -66,17 +70,17 @@ void process_image_callback(const sensor_msgs::Image img)
             //ROS_INFO_STREAM(img.data[i]);
             found_one = true;
             if (where_am_i <= first_third_bound){
-                ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = 0.5;
             }
             else if (where_am_i > first_third_bound && where_am_i <= second_third_bound){
-                ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = 0.0;
             }
             else if (where_am_i > second_third_bound){
-                ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
+                //ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = -0.5;
             }
@@ -86,15 +90,12 @@ void process_image_callback(const sensor_msgs::Image img)
         where_am_i += 1;
 
     }
-    //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
-    ROS_INFO_STREAM("found_one = " << found_one);
 
-    if (found_one = true){
-        ROS_INFO_STREAM("found_one in the loop = " << found_one);
+    //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
+    
+    if (x >0 or z>0){
         drive_robot(x,z);
     }
-
-    
 
 }
 
