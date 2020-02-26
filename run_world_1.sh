@@ -3,6 +3,8 @@
 echo "Cleaning logs"
 rosclean purge -y
 
+
+
 echo "making....sourcing.....launching"
 catkin_make && source devel/setup.bash && roslaunch my_robot world.launch 
 

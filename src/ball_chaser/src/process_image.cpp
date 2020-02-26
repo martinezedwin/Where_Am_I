@@ -22,6 +22,8 @@ void drive_robot(float lin_x, float ang_z)
 }
 
 // This callback function continuously executes and reads the image data
+
+
 void process_image_callback(const sensor_msgs::Image img)
 {
 
@@ -47,57 +49,64 @@ void process_image_callback(const sensor_msgs::Image img)
     //-----------------------------------------------------------------^Image Info^-------------------------------------------------------
 
     //Define the thirds
-    int first_third_bound = image_step / 3;
-    int second_third_bound = image_step * 2 / 3;
+    int first_third_bound = (image_step / 3);
+    int second_third_bound = (image_step * 2 / 3);
     int end_of_image = image_step;
 
     //ROS_INFO_STREAM("First Bound = " << first_third_bound);    //800
     //ROS_INFO_STREAM("Second Bound = " << second_third_bound);  //1600
     //ROS_INFO_STREAM("Third Bound = " << end_of_image);         //2400
 
-    float x = 0;
+    float x = 0.0;
     float z = 0.0;
 
-    int where_am_i = 0;
-
-    bool found_one = false;
+    int where_am_i = 1;
+    bool found_ball = false;
 
     for (int i = 0; i < image_size; i++) {                                      //loop through every pixel in an image
+
         if (where_am_i > image_step){
-            where_am_i = 0;
+            where_am_i = 1;
         }
         if (img.data[i] == white_pixel) {
             //ROS_INFO_STREAM(img.data[i]);
-            found_one = true;
             if (where_am_i <= first_third_bound){
+                //ROS_INFO_STREAM("position = " <<where_am_i );
                 //ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
-                x = 0.5;
-                z = 0.5;
+                x = 0.1;
+                z = 0.1;
+                drive_robot(x,z);
             }
             else if (where_am_i > first_third_bound && where_am_i <= second_third_bound){
+                //ROS_INFO_STREAM("position = " <<where_am_i );
                 //ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
                 x = 0.5;
                 z = 0.0;
+                drive_robot(x,z);
             }
             else if (where_am_i > second_third_bound){
+                //ROS_INFO_STREAM("position = " <<where_am_i );
                 //ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
-                x = 0.5;
-                z = -0.5;
+                x = 0.1;
+                z = -0.1;
+                drive_robot(x,z);
             }
+            else{
+                drive_robot(0.0, 0.0);
+            }
+            break;
+            
         }
         //ROS_INFO_STREAM("i = " << i);
-        //ROS_INFO_STREAM("position = " <<where_am_i );
+        //ROS_INFO_STREAM("out of loop position = " <<where_am_i );
         where_am_i += 1;
-
     }
 
     //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
-    
-    if (x >0 or z>0){
-        drive_robot(x,z);
-    }
+    //drive_robot(x, z);
 
 }
+
 
 int main(int argc, char** argv)
 {
