@@ -5,6 +5,12 @@ This project was created usign Ubuntu 16.04 LTS along with ROS 1 and Gazebo
 
 It was built on top of the [myworld project](https://github.com/martinezedwin/myworld) for the gazebo world. The myworld project also goes over how to install ROS and Gazebo taht could be used for this project as well.
 
+<p align="center">
+  <!--<a href="https://vuepress.vuejs.org/" target="_blank"> -->
+    <img width="180" src="./images/gazebo_and_rviz.png" alt="image">
+  </a>
+</p>
+
 ![Gazebo with Rviz](./images/gazebo_and_rviz.png)
 
 
