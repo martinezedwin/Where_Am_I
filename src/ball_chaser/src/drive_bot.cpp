@@ -11,7 +11,7 @@ ros::Publisher motor_command_publisher;
 // After publishing the requested velocities, a message feedback should be returned with the requested wheel velocities
 bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser::DriveToTarget::Response& res){
     
-    while (ros::ok()) {
+    //while (ros::ok()) {
         // Create a motor_command object of type geometry_msgs::Twist
         geometry_msgs::Twist motor_command;
         // Set wheel velocities, forward [0.5, 0.0]
@@ -22,7 +22,8 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser:
 
         res.msg_feedback = "Linear velocity: " + std::to_string(motor_command.linear.x) + " , angular velocity: " + std::to_string(motor_command.angular.z);
         //ROS_INFO_STREAM(res.msg_feedback);
-    }
+    //}
+    return true;
 }
 
 
