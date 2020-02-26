@@ -20,7 +20,7 @@ The goal of this project was to build a simulated robot on wheels that could mov
 
 <p align="center">
   <!--<a href="https://vuepress.vuejs.org/" target="_blank"> -->
-    <img width="380" src="./images/Structure.png" alt="image">
+    <img width="580" src="./images/Structure.png" alt="image">
   </a>
 </p>
 
