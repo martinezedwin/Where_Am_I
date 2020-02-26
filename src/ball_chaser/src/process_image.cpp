@@ -15,10 +15,10 @@ void drive_robot(float lin_x, float ang_z)
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
 
-    ROS_INFO_STREAM("moving the robot");
-    //if (!client.call(srv)){
-    //    ROS_INFO_STREAM("Failed to execute drive command");
-    //}
+    //ROS_INFO_STREAM("moving the robot");
+    if (!client.call(srv)){
+        ROS_INFO_STREAM("Failed to execute drive command");
+    }
 }
 
 // This callback function continuously executes and reads the image data
