@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"ball_chaser\"
 
-CXX_INCLUDES = -I/home/edwin/Documents/Projects/Go_Chase_It/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/edwin/Documents/Projects/Go_Chase_It/src/ball_chaser/include 
+CXX_INCLUDES = -I/home/edwin/Documents/Go_Chase_It/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/edwin/Documents/Go_Chase_It/src/ball_chaser/include 
 

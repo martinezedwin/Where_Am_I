@@ -1,8 +1,8 @@
-prefix=/home/edwin/Documents/Projects/Go_Chase_It/install
+prefix=/home/edwin/Documents/Go_Chase_It/install
 
 Name: ball_chaser
 Description: Description of ball_chaser
 Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
+Cflags: -I/home/edwin/Documents/Go_Chase_It/install/include
+Libs: -L/home/edwin/Documents/Go_Chase_It/install/lib 
 Requires: 

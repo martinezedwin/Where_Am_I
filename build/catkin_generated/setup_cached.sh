@@ -7,10 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/edwin/Documents/Projects/Go_Chase_It/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/edwin/Documents/Projects/Go_Chase_It/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/edwin/Documents/Projects/Go_Chase_It/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/edwin/Documents/Projects/Go_Chase_It/build"
-export PYTHONPATH="/home/edwin/Documents/Projects/Go_Chase_It/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/edwin/Documents/Projects/Go_Chase_It/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/edwin/Documents/Projects/Go_Chase_It/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/edwin/Documents/Go_Chase_It/devel:$CMAKE_PREFIX_PATH"
+export PATH="/opt/ros/kinetic/bin:/home/edwin/bin:/home/edwin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/edwin/Documents"
+export PWD="/home/edwin/Documents/Go_Chase_It/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/edwin/Documents/Go_Chase_It/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/edwin/Documents/Go_Chase_It/src:$ROS_PACKAGE_PATH"
