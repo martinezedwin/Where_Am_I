@@ -1,18 +1,28 @@
 # Go Chase It!!!!
 
+## Table of Contents
+
+
+### Dependencies
+
+* [ROS Kinetic](http://wiki.ros.org/kinetic)
+* [Gazebo for ROS Kinetic](http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros)
+
 ### Overview
 This project was created usign Ubuntu 16.04 LTS along with ROS 1 and Gazebo
 
-It was built on top of the [myworld project](https://github.com/martinezedwin/myworld) for the gazebo world. The myworld project also goes over how to install ROS and Gazebo taht could be used for this project as well.
+It was built on top of the [myworld project](https://github.com/martinezedwin/myworld) for the gazebo world. Besides the installation of ROS and Gazebo, you only really need the `myworld.world` file. The myworld project also goes over how to install ROS and Gazebo taht could be used for this project as well.
+
+#### Goal
+The goal of this project was to build a simulated robot on wheels that could move, a camera to chase down a ball around a simulated gazebo world.
+
+#### Structure of the Project
 
 <p align="center">
   <!--<a href="https://vuepress.vuejs.org/" target="_blank"> -->
-    <img width="180" src="./images/gazebo_and_rviz.png" alt="image">
+    <img width="380" src="./images/Structure.png" alt="image">
   </a>
 </p>
-
-![Gazebo with Rviz](./images/gazebo_and_rviz.png)
-
 
 ### How to run it
 
