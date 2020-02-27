@@ -1,8 +1,0 @@
-prefix=/home/edwin/Documents/Go_Chase_It/devel
-
-Name: my_robot
-Description: Description of my_robot
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/edwin/Documents/Go_Chase_It/devel/lib 
-Requires: 
