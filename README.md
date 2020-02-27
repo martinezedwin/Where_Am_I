@@ -1,7 +1,12 @@
 # Go Chase It!!!!
 
-## Table of Contents
 
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=jkc33fkSgH0" target="_blank">
+    <img width="780" src="./images/Program_running.png" alt="image">
+  </a>
+</p>
 
 ### Dependencies
 
@@ -19,7 +24,6 @@ The goal of this project was to build a simulated robot on wheels that could mov
 #### Structure of the Project
 
 <p align="center">
-  <!--<a href="https://vuepress.vuejs.org/" target="_blank"> -->
     <img width="780" src="./images/Structure.png" alt="image">
   </a>
 </p>
