@@ -30,10 +30,6 @@ void process_image_callback(const sensor_msgs::Image img)
 
     int white_pixel = 255;
 
-    // TODO: Loop through each pixel in the image and check if there's a bright white one
-    // Then, identify if this pixel falls in the left, mid, or right side of the image
-    // Depending on the white ball position, call the drive_bot function and pass velocities to it
-    // Request a stop when there's no white ball seen by the camera
 
     //-----------------------------------------------------------------Image Info-------------------------------------------------------
     int image_step = img.step;
@@ -59,7 +55,7 @@ void process_image_callback(const sensor_msgs::Image img)
     //ROS_INFO_STREAM("Third Bound = " << end_of_image);         //2400
 
     float x = 0.0;
-    float z = 0.5;
+    float z = 0.5; //rotate around the z axis until you find the ball
 
     int where_am_i = 1;
     bool found_ball = false;
@@ -76,26 +72,19 @@ void process_image_callback(const sensor_msgs::Image img)
                 ROS_INFO_STREAM("IT'S LEFT!!!!!!!!!!!!!!!!!!!");
                 x = 0.1;
                 z = 0.1;
-                //drive_robot(x,z);
             }
             else if (where_am_i > first_third_bound && where_am_i <= second_third_bound){
                 //ROS_INFO_STREAM("position = " <<where_am_i );
                 ROS_INFO_STREAM("IT'S MIDDLE!!!!!!!!!!!!!!!!!!!");
                 x = 0.1;
                 z = 0.0;
-                //drive_robot(x,z);
             }
             else if (where_am_i > second_third_bound){
                 //ROS_INFO_STREAM("position = " <<where_am_i );
                 ROS_INFO_STREAM("IT'S RIGHT!!!!!!!!!!!!!!!!!!!");
                 x = 0.1;
                 z = -0.1;
-                //drive_robot(x,z);
             }
-            //else{
-                //drive_robot(0.0, 0.5);
-            //}
-            
             
         }
         //ROS_INFO_STREAM("i = " << i);
