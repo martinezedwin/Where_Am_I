@@ -60,12 +60,12 @@ void process_image_callback(const sensor_msgs::Image img)
     int where_am_i = 1;
     bool found_ball = false;
 
-    for (int i = 0; i < image_size; i++) {                                      //loop through every pixel in an image
+    for (int i = 0; i < image_size; i+=3) {                                      //loop through every pixel in an image
 
         if (where_am_i > image_step){
             where_am_i = 1;
         }
-        if (img.data[i] == white_pixel) {
+        if (img.data[i] == white_pixel && img.data[i+1] && img.data[i+2]) {
             //ROS_INFO_STREAM(img.data[i]);
             if (where_am_i <= first_third_bound){
                 //ROS_INFO_STREAM("position = " <<where_am_i );
@@ -89,7 +89,7 @@ void process_image_callback(const sensor_msgs::Image img)
         }
         //ROS_INFO_STREAM("i = " << i);
         //ROS_INFO_STREAM("out of loop position = " <<where_am_i );
-        where_am_i += 1;
+        where_am_i += 3;
     }
 
     //ROS_INFO_STREAM("x = " << x <<", "<< "z = "<< z);
