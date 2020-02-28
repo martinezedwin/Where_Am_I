@@ -65,7 +65,7 @@ void process_image_callback(const sensor_msgs::Image img)
         if (where_am_i > image_step){
             where_am_i = 1;
         }
-        if (img.data[i] == white_pixel && img.data[i+1] && img.data[i+2]) {
+        if (img.data[i] == white_pixel && img.data[i+1]==white_pixel && img.data[i+2]==white_pixel) {
             //ROS_INFO_STREAM(img.data[i]);
             if (where_am_i <= first_third_bound){
                 //ROS_INFO_STREAM("position = " <<where_am_i );
