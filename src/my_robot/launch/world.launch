@@ -14,7 +14,7 @@
 
 
   <!-- World File -->
-  <arg name="world_file" default="$(find my_robot)/worlds/myworld.world"/>
+  <arg name="world_file" default="$(find my_robot)/worlds/myworld3.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -36,7 +36,8 @@
   <!--launch rviz-->
   <!--<node name="rviz" pkg="rviz" type="rviz" respawn="false"/>-->
   <!--RVIZ-->
-  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/edwin/Projects/Where_Am_I/src/my_robot/RvizLaunch.launch.rviz"/>
+  <!--<node pkg="rviz" type="rviz" name="rviz" args="-d /home/edwin/Documents/Projects/Where_Am_I/src/my_robot/RvizLaunch.launch.rviz"/>-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_robot)/RvizLaunch.launch.rviz"/>
   <!--Use this insted if you are cloning the whole repo in your src-->
   <!--<node pkg="rviz" type="rviz" name="rviz" args="-d /home/workspace/catkin_ws/src/RoboND-EKFLab/EKFLab.rviz"/>-->
 
