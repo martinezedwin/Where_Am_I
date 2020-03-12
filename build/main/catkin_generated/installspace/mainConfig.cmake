@@ -67,14 +67,14 @@ set(main_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(main_SOURCE_PREFIX /home/edwin/Documents/Projects/Where_Am_I/src/main)
-  set(main_DEVEL_PREFIX /home/edwin/Documents/Projects/Where_Am_I/devel)
+  set(main_SOURCE_PREFIX /home/edwin/Projects/Where_Am_I/src/main)
+  set(main_DEVEL_PREFIX /home/edwin/Projects/Where_Am_I/devel)
   set(main_INSTALL_PREFIX "")
   set(main_PREFIX ${main_DEVEL_PREFIX})
 else()
   set(main_SOURCE_PREFIX "")
   set(main_DEVEL_PREFIX "")
-  set(main_INSTALL_PREFIX /home/edwin/Documents/Projects/Where_Am_I/install)
+  set(main_INSTALL_PREFIX /home/edwin/Projects/Where_Am_I/install)
   set(main_PREFIX ${main_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/edwin/Documents/Projects/Where_Am_I/install/lib;/home/edwin/Documents/Projects/Where_Am_I/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/edwin/Projects/Where_Am_I/install/lib;/home/edwin/Projects/Where_Am_I/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

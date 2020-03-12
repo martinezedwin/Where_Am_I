@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/edwin/Documents/Projects/Where_Am_I/src
+CMAKE_SOURCE_DIR = /home/edwin/Projects/Where_Am_I/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/edwin/Documents/Projects/Where_Am_I/build
+CMAKE_BINARY_DIR = /home/edwin/Projects/Where_Am_I/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/edwin/Documents/Projects/Where_Am_I/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Documents/Projects/Where_Am_I/src /home/edwin/Documents/Projects/Where_Am_I/src /home/edwin/Documents/Projects/Where_Am_I/build /home/edwin/Documents/Projects/Where_Am_I/build /home/edwin/Documents/Projects/Where_Am_I/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/edwin/Projects/Where_Am_I/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Projects/Where_Am_I/src /home/edwin/Projects/Where_Am_I/src /home/edwin/Projects/Where_Am_I/build /home/edwin/Projects/Where_Am_I/build /home/edwin/Projects/Where_Am_I/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

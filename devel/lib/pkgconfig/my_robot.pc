@@ -1,4 +1,4 @@
-prefix=/home/edwin/Documents/Projects/Where_Am_I/devel
+prefix=/home/edwin/Projects/Where_Am_I/devel
 
 Name: my_robot
 Description: Description of my_robot

@@ -1,4 +1,4 @@
-prefix=/home/edwin/Documents/Projects/Where_Am_I/install
+prefix=/home/edwin/Projects/Where_Am_I/install
 
 Name: main
 Description: Description of main

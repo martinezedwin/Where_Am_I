@@ -1,8 +1,8 @@
-# Install script for directory: /home/edwin/Documents/Projects/Where_Am_I/src/main
+# Install script for directory: /home/edwin/Projects/Where_Am_I/src/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/edwin/Documents/Projects/Where_Am_I/install")
+  set(CMAKE_INSTALL_PREFIX "/home/edwin/Projects/Where_Am_I/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/edwin/Documents/Projects/Where_Am_I/build/main/catkin_generated/installspace/main.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/edwin/Projects/Where_Am_I/build/main/catkin_generated/installspace/main.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/main/cmake" TYPE FILE FILES
-    "/home/edwin/Documents/Projects/Where_Am_I/build/main/catkin_generated/installspace/mainConfig.cmake"
-    "/home/edwin/Documents/Projects/Where_Am_I/build/main/catkin_generated/installspace/mainConfig-version.cmake"
+    "/home/edwin/Projects/Where_Am_I/build/main/catkin_generated/installspace/mainConfig.cmake"
+    "/home/edwin/Projects/Where_Am_I/build/main/catkin_generated/installspace/mainConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/main" TYPE FILE FILES "/home/edwin/Documents/Projects/Where_Am_I/src/main/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/main" TYPE FILE FILES "/home/edwin/Projects/Where_Am_I/src/main/package.xml")
 endif()
 

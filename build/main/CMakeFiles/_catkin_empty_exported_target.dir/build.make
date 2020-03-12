@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/edwin/Documents/Projects/Where_Am_I/src
+CMAKE_SOURCE_DIR = /home/edwin/Projects/Where_Am_I/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/edwin/Documents/Projects/Where_Am_I/build
+CMAKE_BINARY_DIR = /home/edwin/Projects/Where_Am_I/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ main/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_exported_
 .PHONY : main/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 main/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/edwin/Documents/Projects/Where_Am_I/build/main && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/edwin/Projects/Where_Am_I/build/main && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : main/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 main/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/edwin/Documents/Projects/Where_Am_I/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Documents/Projects/Where_Am_I/src /home/edwin/Documents/Projects/Where_Am_I/src/main /home/edwin/Documents/Projects/Where_Am_I/build /home/edwin/Documents/Projects/Where_Am_I/build/main /home/edwin/Documents/Projects/Where_Am_I/build/main/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/edwin/Projects/Where_Am_I/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/edwin/Projects/Where_Am_I/src /home/edwin/Projects/Where_Am_I/src/main /home/edwin/Projects/Where_Am_I/build /home/edwin/Projects/Where_Am_I/build/main /home/edwin/Projects/Where_Am_I/build/main/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : main/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

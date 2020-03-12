@@ -1,7 +1,7 @@
 <launch>
 
   <!-- Map Server -->
-  <arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
+  <arg name="map_file" default="$(find my_robot)/maps/map3.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
   
   <!-- AMCL Node -->
@@ -15,7 +15,7 @@
     <param name="initial_pose_x" value="0"/>
     <param name="initial_pose_y" value="0"/>
 
-    <param name="min_particles" value="300"/>
+    <param name="min_particles" value="500"/>
     <param name="max_particles" value="5000"/>
 
     <!--<param name="update_min_d" value="0.2"/> meters-->

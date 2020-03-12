@@ -1,4 +1,4 @@
-prefix=/home/edwin/Documents/Projects/Where_Am_I/devel
+prefix=/home/edwin/Projects/Where_Am_I/devel
 
 Name: teleop_twist_keyboard
 Description: Description of teleop_twist_keyboard
