@@ -1,8 +1,0 @@
-prefix=/home/edwin/Projects/Where_Am_I/devel
-
-Name: ball_chaser
-Description: Description of ball_chaser
-Version: 0.0.0
-Cflags: -I/home/edwin/Projects/Where_Am_I/devel/include
-Libs: -L${prefix}/lib 
-Requires: 
