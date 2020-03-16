@@ -27,7 +27,7 @@ The goal of this project is to localize the the robot on it's map
 
 ### How to run it
  
-1. Clone this repo: `git clone https://github.com/martinezedwin/Go_Chase_It`
+1. Clone this repo: `git clone https://github.com/martinezedwin/Where_Am_I`
 2. Install ROS and Gazebo (from the project directory `chmod +x setup.sh && ./setup.sh`)
 3. Install ros-teleop (see commands under Dependencies)
 4. run the run_world_1.sh script: `chmod + x run_world_1.sh && ./run_world.sh`. 
